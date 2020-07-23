@@ -1,14 +1,12 @@
-let popup = document.querySelector('.popup');
-let restartGame = document.querySelector('.restartGame');
-let quitGame = document.querySelector('.quitGame');
-
+const popup = document.querySelector('.popup');
+const restartGame = document.querySelector('.restartGame');
+const quitGame = document.querySelector('.quitGame');
+const main = document.querySelector('.main');
+const scoreTabl = document.querySelector('.scoreTabl');
+let i = 0;
 
 let tetris = document.createElement('div');
 tetris.classList.add('tetris');
-
-quitGame.addEventListener('click', () => {
-    window.location.replace('file:///C:/Users/oksan/Desktop/MainPage.html')
-})
 
 for(let i=1; i < 181; i++) {
     let excel = document.createElement('div');
@@ -16,11 +14,8 @@ for(let i=1; i < 181; i++) {
     tetris.appendChild(excel)
 }
 
-let main = document.querySelector('.main');
 main.appendChild(tetris);
 let excels = document.querySelectorAll('.excel');
-let i = 0;
-
 for(let y=18; y> 0; y--) {
     for(let x = 1; x < 11; x++) {
         excels[i].setAttribute('posX', x);
@@ -29,7 +24,6 @@ for(let y=18; y> 0; y--) {
     }
 }
 
-let scoreTabl = document.querySelector('.scoreTabl');
 let score = document.createElement('h3');
 score.classList.add('score');
 scoreTabl.appendChild(score);
